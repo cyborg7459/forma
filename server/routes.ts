@@ -1,0 +1,43 @@
+import { Router } from 'express';
+import { workspaceController } from './controllers/workspaceController';
+import type { WorkspaceService } from './services/workspaceService';
+
+export function apiRoutes(service: WorkspaceService) {
+  const router = Router();
+  const c = workspaceController(service);
+  router.get('/health', (_request, response) => response.json({ data: { status: 'ok' } }));
+  router.get('/state', c.state);
+  router.get('/export', c.export);
+  router.get('/sections', c.sections);
+  router.post('/sections', c.createSection);
+  router.get('/sections/:id', c.section);
+  router.patch('/sections/:id', c.updateSection);
+  router.delete('/sections/:id', c.deleteSection);
+  router.get('/sections/:id/items', c.items);
+  router.post('/sections/:id/items', c.createItem);
+  router.get('/sections/:id/logs', c.sectionLogs);
+  router.post('/sections/:id/logs', c.createSectionLog);
+  router.get('/items/:id', c.item);
+  router.patch('/items/:id', c.updateItem);
+  router.delete('/items/:id', c.deleteItem);
+  router.get('/items/:id/steps', c.steps);
+  router.post('/items/:id/steps', c.createStep);
+  router.get('/items/:id/logs', c.itemLogs);
+  router.post('/items/:id/logs', c.createItemLog);
+  router.patch('/steps/:id', c.updateStep);
+  router.delete('/steps/:id', c.deleteStep);
+  router.patch('/logs/:id', c.updateLog);
+  router.delete('/logs/:id', c.deleteLog);
+  router.get('/finance', c.finance);
+  router.get('/finance/settings', c.settings);
+  router.patch('/finance/settings', c.updateSettings);
+  router.get('/finance/accounts', c.accounts);
+  router.post('/finance/accounts', c.createAccount);
+  router.patch('/finance/accounts/:id', c.updateAccount);
+  router.delete('/finance/accounts/:id', c.deleteAccount);
+  router.get('/finance/targets', c.targets);
+  router.post('/finance/targets', c.createTarget);
+  router.patch('/finance/targets/:id', c.updateTarget);
+  router.delete('/finance/targets/:id', c.deleteTarget);
+  return router;
+}
