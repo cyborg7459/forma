@@ -1,4 +1,4 @@
-import type { Database } from '../../shared/models';
+import type { Database } from '../../shared/models.js';
 
 export interface Repository {
   read(): Promise<Database>;

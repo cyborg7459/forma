@@ -1,5 +1,5 @@
 import type { RequestHandler } from 'express';
-import type { WorkspaceService } from '../services/workspaceService';
+import type { WorkspaceService } from '../services/workspaceService.js';
 
 type Endpoint = (request: Parameters<RequestHandler>[0]) => Promise<unknown>;
 const endpoint = (action: Endpoint, status = 200): RequestHandler => async (request, response) => {

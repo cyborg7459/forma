@@ -4,10 +4,10 @@ import {
   phases, sectionInput, sectionPatch, itemInput, itemPatch, stepInput, stepPatch,
   logInput, logPatch, accountInput, accountPatch, targetInput, targetPatch,
   financeSettingsPatch, type Database, type Item, type Phase, type Section, type SectionKind,
-} from '../../shared/models';
-import { financeSummary } from '../../shared/calculations';
-import { found, HttpError } from '../errors';
-import type { Repository } from '../repositories/repository';
+} from '../../shared/models.js';
+import { financeSummary } from '../../shared/calculations.js';
+import { found, HttpError } from '../errors.js';
+import type { Repository } from '../repositories/repository.js';
 
 const stamps = () => {
   const now = new Date().toISOString();

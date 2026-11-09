@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { resolve } from 'node:path';
 import { access } from 'node:fs/promises';
-import { createApp } from './app';
-import { JsonRepository } from './repositories/jsonRepository';
-import { MongoRepository } from './repositories/mongoRepository';
-import type { Repository } from './repositories/repository';
-import { projectRoot } from './paths';
+import { createApp } from './app.js';
+import { JsonRepository } from './repositories/jsonRepository.js';
+import { MongoRepository } from './repositories/mongoRepository.js';
+import type { Repository } from './repositories/repository.js';
+import { projectRoot } from './paths.js';
 
 const port = Number(process.env.PORT ?? 3001);
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be between 1 and 65535');

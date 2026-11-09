@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { createApp } from '../server/app';
-import { MongoRepository } from '../server/repositories/mongoRepository';
+import { createApp } from '../server/app.js';
+import { MongoRepository } from '../server/repositories/mongoRepository.js';
 
 type App = ReturnType<typeof createApp>;
 

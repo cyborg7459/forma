@@ -1,5 +1,5 @@
-import type { Database, FinanceSummary, Item, Step } from './models';
-import { today } from './models';
+import type { Database, FinanceSummary, Item, Step } from './models.js';
+import { today } from './models.js';
 
 export function inclusiveMonths(start: string, end: string): number {
   const [startYear, startMonth] = start.split('-').map(Number);

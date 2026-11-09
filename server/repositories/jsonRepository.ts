@@ -3,9 +3,9 @@ import { mkdir, open, readFile, rename, unlink } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import lockfile from 'proper-lockfile';
 import { z } from 'zod';
-import { databaseSchema, emptyDatabase, type Database } from '../../shared/models';
-import { migrateDatabase } from './migrations';
-import type { Repository } from './repository';
+import { databaseSchema, emptyDatabase, type Database } from '../../shared/models.js';
+import { migrateDatabase } from './migrations.js';
+import type { Repository } from './repository.js';
 
 const lockOwnerSchema = z.object({
   pid: z.number().int().positive(),

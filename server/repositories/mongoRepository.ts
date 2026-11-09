@@ -1,7 +1,7 @@
 import { MongoClient, type Collection } from 'mongodb';
 import { z } from 'zod';
-import { databaseSchema, emptyDatabase, type Database } from '../../shared/models';
-import type { Repository } from './repository';
+import { databaseSchema, emptyDatabase, type Database } from '../../shared/models.js';
+import type { Repository } from './repository.js';
 
 interface WorkspaceDocument {
   _id: string;

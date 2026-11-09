@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { databaseSchema, moneySchema, targetSchema, type Database } from '../../shared/models';
-import { inclusiveMonths, roundMoney } from '../../shared/calculations';
+import { databaseSchema, moneySchema, targetSchema, type Database } from '../../shared/models.js';
+import { inclusiveMonths, roundMoney } from '../../shared/calculations.js';
 
 const legacyDatabaseSchema = databaseSchema.extend({
   version: z.literal(1),

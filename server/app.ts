@@ -1,11 +1,11 @@
 import express, { type ErrorRequestHandler } from 'express';
 import { z } from 'zod';
 import { resolve } from 'node:path';
-import { apiRoutes } from './routes';
-import { WorkspaceService } from './services/workspaceService';
-import { HttpError } from './errors';
-import type { Repository } from './repositories/repository';
-import { projectRoot } from './paths';
+import { apiRoutes } from './routes.js';
+import { WorkspaceService } from './services/workspaceService.js';
+import { HttpError } from './errors.js';
+import type { Repository } from './repositories/repository.js';
+import { projectRoot } from './paths.js';
 
 const firstHeader = (value: string | string[] | undefined) =>
   (Array.isArray(value) ? value[0] : value)?.split(',')[0].trim();

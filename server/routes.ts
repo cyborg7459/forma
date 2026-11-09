@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { workspaceController } from './controllers/workspaceController';
-import type { WorkspaceService } from './services/workspaceService';
+import { workspaceController } from './controllers/workspaceController.js';
+import type { WorkspaceService } from './services/workspaceService.js';
 
 export function apiRoutes(service: WorkspaceService) {
   const router = Router();
